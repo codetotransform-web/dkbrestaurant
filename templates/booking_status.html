@@ -1,0 +1,50 @@
+{%extends 'base.html'%}
+{% block body%}
+
+<!-- Nav bar-->
+<div class="container-fluid d-flex justify-content-center bg-warning py-auto">
+    <div class="container bg-info d-flex justify-content-end p-2 mb-2" >
+        {%if user == None %}
+            <a href="/home/login/" class="font-weight-bold pr-2" style="border-right: 1.2px solid black;color:black">Log In</a>
+            <a href="/home/register/" class="font-weight-bold pl-2" style="color:black">Register</a>
+        {% else %}
+            <div class="font-weight-bold pr-2" style="border-right: 1.2px solid black;color:black">Hello {{ user.mail_Id }}</div>
+            <a href="/home/logout/" class="font-weight-bold pl-2" style="color:black">Log Out</a>
+        {% endif %}
+    </div>
+</div>
+
+
+<div class="display-1 text-center"> Booking Done </div>
+<div class="display-4 text-center"> Booking information </div>
+<!--Booking Details Card-->
+    <div class="container-fluid d-flex justify-content-around">
+        <div class="card py-2 m-2">
+            <div class="w-100 text-center" style="font-weight: 750;font-size: 4vh">Date : {{booking_date}}</div>
+            <div class="w-100 text-center" style="font-weight: 700;font-size: 3vh">Slot</div>
+            <div class="row "  style="font-weight: 700;">
+                <div class="col text-center" style="left:0">
+                <div style="font-weight: 500;" name="slot_begin">Starting Time</div>
+                <div>{{slot_begin}}</div>
+                </div>
+                <div class="col text-center" style="left:0">
+                    <div style="font-weight: 500;" name="slot_end">Ending Time</div>
+                    <div>{{slot_end}}</div>
+                </div>
+                
+                
+            </div>
+            
+
+            
+            <a href="{% url 'home' %}" class="btn bg-danger w-100 mt-1" type="submit" style="color: white;cursor: pointer">Go Back to Home Page</a>
+            
+            
+                
+        
+            
+        </div>     
+    </div>
+
+
+{%endblock%}

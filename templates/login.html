@@ -1,0 +1,23 @@
+
+{%extends 'base.html'%}
+
+{% block body%}
+<div class="container bg-info h1">Restaurant Log In Page</div>
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="container bg-danger form-grou p-1 d-flex justify-content-center" >
+            <div class="bg-info p-4 my-auto rounded" style="max-width: 50vh;">
+                <div class="d-flex justify-content-center flex-column">
+                <div class="text-center">{{message}}</div>
+                    <input class="form-control m-2 w-100" type="email" placeholder="Email Id" name="email_Id">
+                    <input class=" form-control m-2 w-100" type="password" placeholder="Password" name="password">
+                    <button class="btn bg-danger w-50 mx-auto" type="submit" style="color: white">Log In</button>
+                    <div class="mt-2" style="color: red">Don't Have an account?</div><a class="btn bg-warning" href="/home/register/" style="color: blue">Register Here</a>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </form>
+{%endblock%}

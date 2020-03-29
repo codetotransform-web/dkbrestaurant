@@ -1,0 +1,31 @@
+{%load static%}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css'%}">
+    <title>DKB Restaurant</title>
+    <script src="{% static 'jquery.js'%}"></script>
+    <script src="{% static 'popper.js'%}"></script>
+    <script src="{% static 'bootstrap.min.js'%}"></script>
+    
+</head>
+
+
+
+<body>
+    
+    <div class="container-fluid bg-danger" style="border: 1px solid red">
+        <div class="text-center h1 p-4">DKB Restaurant</div>
+    </div>
+    
+    
+    {%block body%}
+    {%endblock%}
+</body>
+
+</html> 
